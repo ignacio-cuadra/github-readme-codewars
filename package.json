@@ -1,0 +1,23 @@
+{
+  "name": "codewars-stats",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ignacio-cuadra/codewars-stats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ignacio-cuadra/codewars-stats/issues"
+  },
+  "homepage": "https://github.com/ignacio-cuadra/codewars-stats#readme",
+  "dependencies": {
+    "jsdom": "^21.1.0"
+  }
+}
