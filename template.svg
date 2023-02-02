@@ -8,7 +8,7 @@
         role="img"
         aria-labelledby="descId"
       >
-        <title id="titleId">Ignacio Cuadra's Codewars Stats, Rank: ${rank}</title>
+        <title id="titleId">${name}'s Codewars Stats, Rank: ${rank}</title>
         <desc id="descId">Honor: ${honor}, Leaderboard Position: ${leaderboardPosition}, Honor Percentile ${honorPercentile}, Total Completed Kata: ${totalCompletedKata}</desc>
         <style>
           .header {
@@ -120,7 +120,7 @@
         y="0"
         class="header"
         data-testid="header"
-      >Ignacio Cuadra's Codewars Stats</text>
+      >${name}'s Codewars Stats</text>
     </g>
       </g>
     
