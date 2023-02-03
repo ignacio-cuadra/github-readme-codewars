@@ -2,7 +2,7 @@
   "name": "codewars-stats",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/ignacio-cuadra/codewars-stats/issues"
   },
-  "homepage": "https://github.com/ignacio-cuadra/codewars-stats#readme",
-  "dependencies": {
-    "jsdom": "^21.1.0"
-  }
+  "homepage": "https://github.com/ignacio-cuadra/codewars-stats#readme"
 }
