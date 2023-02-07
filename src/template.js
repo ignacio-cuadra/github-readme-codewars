@@ -1,6 +1,6 @@
-import card from "./card.js";
-import hexagon from "./hexagon.js";
-import label from "./label.js";
+import card from "./components/card.js";
+import hexagon from "./components/hexagon.js";
+import label from "./components/label.js";
 
 export default function template({
   rank,
@@ -9,14 +9,17 @@ export default function template({
   honorPercentile,
   totalCompletedKata,
 }) {
+  const rankArray = rank.split(" ");
+  const rankNumber = rankArray[0];
+  const rankCategory = rankArray.length > 0 ? rankArray[1] : "Kyu";
   const width = 215;
   const height = 300;
   const padding = 20;
   const backgroundColor = "rgb(255, 248, 208)";
   const primaryColor = "rgb(73, 68, 40)";
   return card({
-    title: "Codewars Stats Ignacio Cuadra",
-    description: "Codewars Stats Ignacio Cuadra",
+    title: "Codewars Stats",
+    description: "Codewars Stats",
     width: width,
     height: height,
     borderRadius: 0.2,
@@ -38,14 +41,14 @@ export default function template({
         })}
       
         ${label({
-          text: rank,
+          text: rankNumber,
           x: width / 2,
           y: padding * 2 + width / 4 - 10,
           fill: backgroundColor,
           fontSize: "3em",
         })}
         ${label({
-          text: "Kyu",
+          text: rankCategory,
           x: width / 2,
           y: padding * 2 + width / 4 + 12,
           fill: backgroundColor,
@@ -102,23 +105,17 @@ export default function template({
         })}
         
 
-        <rect x = "${padding * 2}" y = "${height - padding * 3}" width = "${
+        <rect x = "${padding * 2}" y = "${height - padding * 2.5}" width = "${
       width - padding * 4
     }" height = "${
-      padding * 1.5
+      padding * 1
     }" fill = "transparent" stroke = "${primaryColor}" stroke-width = "2" />
 
         ${label({
           text: "C O D E W A R S",
           x: width / 2,
-          y: height - padding * 2 - 7,
+          y: height - padding * 2 + 2,
           fontSize: "1em",
-        })}
-        ${label({
-          text: "stats",
-          x: width / 2,
-          y: height - padding * 2 + 4,
-          fontSize: ".5em",
         })}
       `,
   });

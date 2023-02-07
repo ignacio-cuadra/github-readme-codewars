@@ -3,17 +3,17 @@ const fetcher = ({ username }) => {
   return fetch(`https://www.codewars.com/users/${username}`)
     .then((response) => response.text())
     .then((html) => {
-      const name = getDataFormLabel(html, "Name");
-      const rank = getDataFormLabel(html, "Rank").split(" ")[0];
-      const honor = getDataFormLabel(html, "Honor");
-      const leaderboardPosition = getDataFormLabel(
-        html,
-        "Leaderboard Position"
-      );
-      const honorPercentile = getDataFormLabel(html, "Honor Percentile");
-      const totalCompletedKata = getDataFormLabel(html, "Total Completed Kata");
+      // const name = getDataFormLabel(html, "Name");
+      const rank = getDataFormLabel(html, "Rank") || "8 Kyu";
+      const honor = getDataFormLabel(html, "Honor") || "0";
+      const leaderboardPosition =
+        getDataFormLabel(html, "Leaderboard Position") || "unknow";
+      const honorPercentile =
+        getDataFormLabel(html, "Honor Percentile") || "unknow";
+      const totalCompletedKata =
+        getDataFormLabel(html, "Total Completed Kata") || "0";
       return {
-        name,
+        // name,
         rank,
         honor,
         leaderboardPosition,

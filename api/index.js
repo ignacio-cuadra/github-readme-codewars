@@ -5,10 +5,10 @@ export default async function handler(req, res) {
   try {
     const data = await fetcher({ username });
     res.status(200);
+    res.setHeader("Content-Type", "image/svg+xml");
     //res.setHeader("Content-Type", "image/svg+xml; charset=utf-8");
     res.send(template(data));
   } catch (error) {
-    console.error(error);
     res.status(500).json({ message: error.message });
   }
 }
