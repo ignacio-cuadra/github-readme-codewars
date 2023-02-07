@@ -10,17 +10,18 @@ const card = ({
 } = {}) => {
   return `
     <svg
-      width="${width}"
-      height="${height}"
+      width="${width * 1.5}"
+      height="${height * 1.5}"
       viewBox="0 0 ${width} ${height}"
       xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
     <title>${title}</title>
     <desc>${description}</desc>
     
     <style>
     </style>
-    
+    <g >
     <rect
       x="0"
       y="0"
@@ -31,7 +32,7 @@ const card = ({
       stroke="${borderColor}"
       stroke-opacity="1"
     />
-
+    </g>
     ${children}
     </svg>
   `;

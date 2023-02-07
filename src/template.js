@@ -1,27 +1,33 @@
-import card from "../src/card.js";
-import hexagon from "../src/hexagon.js";
-import label from "../src/label.js";
-export default async function handler(req, res) {
+import card from "./card.js";
+import hexagon from "./hexagon.js";
+import label from "./label.js";
+
+export default function template({
+  rank,
+  honor,
+  leaderboardPosition,
+  honorPercentile,
+  totalCompletedKata,
+}) {
   const width = 215;
   const height = 300;
   const padding = 20;
   const backgroundColor = "rgb(255, 248, 208)";
   const primaryColor = "rgb(73, 68, 40)";
-  res.send(
-    card({
-      title: "Codewars Stats Ignacio Cuadra",
-      description: "Codewars Stats Ignacio Cuadra",
-      width: width,
-      height: height,
-      borderRadius: 0.2,
-      backgroundColor: backgroundColor,
-      borderColor: backgroundColor,
-      children: `
+  return card({
+    title: "Codewars Stats Ignacio Cuadra",
+    description: "Codewars Stats Ignacio Cuadra",
+    width: width,
+    height: height,
+    borderRadius: 0.2,
+    backgroundColor: backgroundColor,
+    borderColor: backgroundColor,
+    children: `
         <rect x = "${padding}" y = "${padding}" width = "${
-        width - padding * 2
-      }" height = "${
-        height - padding * 2
-      }" fill = "transparent" stroke = "${primaryColor}" stroke-width = "2" />
+      width - padding * 2
+    }" height = "${
+      height - padding * 2
+    }" fill = "transparent" stroke = "${primaryColor}" stroke-width = "2" />
 
         ${hexagon({
           x: width / 2 - width / 4,
@@ -32,7 +38,7 @@ export default async function handler(req, res) {
         })}
       
         ${label({
-          text: "2",
+          text: rank,
           x: width / 2,
           y: padding * 2 + width / 4 - 10,
           fill: backgroundColor,
@@ -46,7 +52,7 @@ export default async function handler(req, res) {
           fontSize: ".5em",
         })}
         ${label({
-          text: "1,250",
+          text: honor,
           x: width / 2,
           y: padding * 2 + width / 4 + 27,
           fill: backgroundColor,
@@ -61,7 +67,7 @@ export default async function handler(req, res) {
           fontSize: ".6em",
         })}
         ${label({
-          text: "#16.637",
+          text: leaderboardPosition,
           x: width / 2,
           y: height / 2 + 22 + 5,
           fontSize: ".6em",
@@ -75,7 +81,7 @@ export default async function handler(req, res) {
           fontSize: ".6em",
         })}
         ${label({
-          text: "Top 3,276%",
+          text: honorPercentile,
           x: padding * 3,
           y: height / 2 + 22 + 40,
           fontSize: ".6em",
@@ -89,7 +95,7 @@ export default async function handler(req, res) {
           fontSize: ".6em",
         })}
         ${label({
-          text: "85",
+          text: totalCompletedKata,
           x: width - padding * 3,
           y: height / 2 + 22 + 40,
           fontSize: ".6em",
@@ -97,10 +103,10 @@ export default async function handler(req, res) {
         
 
         <rect x = "${padding * 2}" y = "${height - padding * 3}" width = "${
-        width - padding * 4
-      }" height = "${
-        padding * 1.5
-      }" fill = "transparent" stroke = "${primaryColor}" stroke-width = "2" />
+      width - padding * 4
+    }" height = "${
+      padding * 1.5
+    }" fill = "transparent" stroke = "${primaryColor}" stroke-width = "2" />
 
         ${label({
           text: "C O D E W A R S",
@@ -115,6 +121,5 @@ export default async function handler(req, res) {
           fontSize: ".5em",
         })}
       `,
-    })
-  );
+  });
 }

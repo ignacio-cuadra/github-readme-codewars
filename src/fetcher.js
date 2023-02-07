@@ -4,7 +4,7 @@ const fetcher = ({ username }) => {
     .then((response) => response.text())
     .then((html) => {
       const name = getDataFormLabel(html, "Name");
-      const rank = getDataFormLabel(html, "Rank");
+      const rank = getDataFormLabel(html, "Rank").split(" ")[0];
       const honor = getDataFormLabel(html, "Honor");
       const leaderboardPosition = getDataFormLabel(
         html,
@@ -12,14 +12,6 @@ const fetcher = ({ username }) => {
       );
       const honorPercentile = getDataFormLabel(html, "Honor Percentile");
       const totalCompletedKata = getDataFormLabel(html, "Total Completed Kata");
-      console.log({
-        name,
-        rank,
-        honor,
-        leaderboardPosition,
-        honorPercentile,
-        totalCompletedKata,
-      });
       return {
         name,
         rank,
