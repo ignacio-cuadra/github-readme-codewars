@@ -9,7 +9,7 @@ Display your codewars stats on your profile README
 2. Replace the value after ?username= with your Codewars username
 
 ```md
-[![Codewars Stats](https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra)](https://github.com/ignacio-cuadra/codewars-stats)
+[![Codewars Stats](https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra)](https://github.com/ignacio-cuadra/github-readme-codewars)
 ```
 
 3. ⭐Star the repo 😅
