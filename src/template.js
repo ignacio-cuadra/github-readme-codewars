@@ -18,7 +18,7 @@ export default function template({
   const width = 500;
   const height = 200;
   const backgroundColor = "#fffefe";
-  const borderColor = "rgba(0, 0, 0, 0.5)";
+  const borderColor = "rgba(0, 0, 0, 0.2)";
   const textColor = "rgb(0,0,0)";
   const primaryColor = "#1f87e7";
   const padding = 30;
