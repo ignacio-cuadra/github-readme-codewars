@@ -10,8 +10,8 @@ const card = ({
 } = {}) => {
   return `
     <svg
-      width="${width * 1.5}"
-      height="${height * 1.5}"
+      width="${width}"
+      height="${height}"
       viewBox="0 0 ${width} ${height}"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"

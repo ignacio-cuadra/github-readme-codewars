@@ -4,6 +4,34 @@ export default function hexagon({
   width = 10,
   height = 10,
   fill = "red",
+  strokeColor = "transparent",
+  strokeWidth = 0,
 }) {
-  return `<svg x = "${x}" y = "${y}" height="${width}" width="${height}" viewBox="0 0 512 512"><polygon fill = "${fill}" points="25.045,128 256,0 486.955,128 486.955,384 256,512 25.045,384 "></polygon></svg>`;
+  const hexagonVerticalPadding = 0;
+  const hexagonHorizontalPadding = 5;
+  const hexagonWidth = 100;
+  const hexagonHeight = 100;
+  return `<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    x="${x}"
+    y="${y}"
+    width="${width}"
+    height="${height}"
+    viewBox="${strokeWidth / -2} ${strokeWidth / -2 - strokeWidth * 0.1} ${
+    hexagonWidth + strokeWidth
+  } ${hexagonHeight + strokeWidth + strokeWidth * 0.2}">
+  <polygon points="${hexagonWidth / 2},${hexagonVerticalPadding} ${
+    hexagonWidth - hexagonHorizontalPadding
+  },${hexagonHeight * 0.25} ${hexagonWidth - hexagonHorizontalPadding},${
+    hexagonHeight * 0.75
+  } ${hexagonWidth / 2},${
+    hexagonHeight - hexagonVerticalPadding
+  } ${hexagonHorizontalPadding},${
+    hexagonHeight * 0.75
+  } ${hexagonHorizontalPadding},${
+    hexagonHeight * 0.25
+  }" fill="${fill}" stroke="${strokeColor}" stroke-width="${strokeWidth}"/>
+</svg>
+`;
 }

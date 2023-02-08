@@ -3,7 +3,7 @@ export default function label({
   y,
   fontSize = "1em",
   fill = "rgb(0, 0, 0)",
-  text,
+  text = "",
   fontWeight = 500,
 }) {
   return text

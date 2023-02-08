@@ -1,119 +1,141 @@
-import card from "../src/card.js";
-import hexagon from "../src/hexagon.js";
-import label from "../src/label.js";
+import card from "../src/components/card.js";
+import hexagon from "../src/components/hexagon.js";
+import katanas from "../src/components/katanas.js";
+import label from "../src/components/label.js";
 export default async function handler(req, res) {
-  const width = 215;
-  const height = 300;
-  const padding = 20;
-  const backgroundColor = "rgb(255, 248, 208)";
-  const primaryColor = "rgb(73, 68, 40)";
+  const rank = "3 kyu";
+  const honor = "1,250";
+  let leaderboardPosition = "#16,637";
+  const honorPercentile = "Top 3.276%";
+  const totalCompletedKata = "85";
+
+  const rankArray = rank.split(" ");
+  const rankNumber = rankArray[0];
+  const rankCategory = rankArray.length > 0 ? rankArray[1] : "kyu";
+  leaderboardPosition = leaderboardPosition.replace("#", "");
+
+  const width = 500;
+  const height = 200;
+  const backgroundColor = "#fffefe";
+  const borderColor = "rgba(0, 0, 0, 0.5)";
+  const textColor = "rgb(0,0,0)";
+  const primaryColor = "#1f87e7";
+  const padding = 30;
+  const hexagonSize = 100;
   res.send(
     card({
       title: "Codewars Stats Ignacio Cuadra",
       description: "Codewars Stats Ignacio Cuadra",
       width: width,
       height: height,
-      borderRadius: 0.2,
-      backgroundColor: backgroundColor,
-      borderColor: backgroundColor,
+      borderRadius: 10,
+      backgroundColor,
+      borderColor,
       children: `
-        <rect x = "${padding}" y = "${padding}" width = "${
-        width - padding * 2
-      }" height = "${
-        height - padding * 2
-      }" fill = "transparent" stroke = "${primaryColor}" stroke-width = "2" />
+        <line x1 = "${
+          (width - 2 * padding) / 3 + padding - padding
+        }" y1 = "${padding}" x2 = "${
+        (width - 2 * padding) / 3 + padding - padding
+      }" y2="${height - padding}" stroke="${borderColor}" stroke-width="0.5"/>
 
-        ${hexagon({
-          x: width / 2 - width / 4,
-          y: padding * 2,
-          width: width / 2,
-          height: width / 2,
-          fill: primaryColor,
-        })}
-      
-        ${label({
-          text: "2",
-          x: width / 2,
-          y: padding * 2 + width / 4 - 10,
-          fill: backgroundColor,
-          fontSize: "3em",
-        })}
-        ${label({
-          text: "Kyu",
-          x: width / 2,
-          y: padding * 2 + width / 4 + 12,
-          fill: backgroundColor,
-          fontSize: ".5em",
-        })}
-        ${label({
-          text: "1,250",
-          x: width / 2,
-          y: padding * 2 + width / 4 + 27,
-          fill: backgroundColor,
-          fontSize: ".8em",
-        })}
+      <line x1 = "${
+        ((width - 2 * padding) / 3) * 2 + padding + padding
+      }" y1 = "${padding}" x2 = "${
+        ((width - 2 * padding) / 3) * 2 + padding + padding
+      }" y2="${height - padding}" stroke="${borderColor}" stroke-width="0.5"/>
 
-        ${label({
-          text: "Leaderboard",
-          fontWeight: "bold",
-          x: width / 2,
-          y: height / 2 + 10 + 5,
-          fontSize: ".6em",
-        })}
-        ${label({
-          text: "#16.637",
-          x: width / 2,
-          y: height / 2 + 22 + 5,
-          fontSize: ".6em",
-        })}
+      ${hexagon({
+        x: width / 2 - hexagonSize / 2,
+        y: padding,
+        width: hexagonSize,
+        height: hexagonSize,
+        fill: "transparent",
+        strokeColor: primaryColor,
+        strokeWidth: 4,
+      })}
 
-        ${label({
-          text: "Honor",
-          fontWeight: "bold",
-          x: padding * 3,
-          y: height / 2 + 10 + 40,
-          fontSize: ".6em",
-        })}
-        ${label({
-          text: "Top 3,276%",
-          x: padding * 3,
-          y: height / 2 + 22 + 40,
-          fontSize: ".6em",
-        })}
+      <rect x = "${
+        width / 2 - 20
+      }" y = "${padding}" width = "40" height = "40" fill = "${backgroundColor}"/>
 
-        ${label({
-          text: "Katas",
-          fontWeight: "bold",
-          x: width - padding * 3,
-          y: height / 2 + 10 + 40,
-          fontSize: ".6em",
-        })}
-        ${label({
-          text: "85",
-          x: width - padding * 3,
-          y: height / 2 + 22 + 40,
-          fontSize: ".6em",
-        })}
-        
+      ${katanas({
+        x: width / 2 - 15,
+        y: padding,
+        width: 30,
+        height: 30,
+        color: primaryColor,
+      })}
 
-        <rect x = "${padding * 2}" y = "${height - padding * 3}" width = "${
-        width - padding * 4
-      }" height = "${
-        padding * 1.5
-      }" fill = "transparent" stroke = "${primaryColor}" stroke-width = "2" />
+      ${label({
+        x: width / 2,
+        y: hexagonSize / 2 + padding,
+        fontSize: "2em",
+        fontWeight: "bold",
+        fill: textColor,
+        text: rankNumber,
+      })}
 
-        ${label({
-          text: "C O D E W A R S",
-          x: width / 2,
-          y: height - padding * 2 - 7,
-          fontSize: "1em",
-        })}
-        ${label({
-          text: "stats",
-          x: width / 2,
-          y: height - padding * 2 + 4,
-          fontSize: ".5em",
-        })}
+      ${label({
+        x: width / 2,
+        y: hexagonSize / 2 + padding + 20,
+        fontSize: "1em",
+        fill: textColor,
+        text: rankCategory,
+      })}
+
+      ${label({
+        x: width / 2,
+        y: hexagonSize + padding + 20,
+        fontSize: "1em",
+        fontWeight: "bold",
+        fill: primaryColor,
+        text: "Codewar's Rank",
+      })}
+
+      ${label({
+        x: width / 2,
+        y: hexagonSize + padding + 20 + 20,
+        fontSize: ".8em",
+        fill: textColor,
+        text: honor,
+      })}
+
+
+
+      ${label({
+        x: width / 6 - padding / 2,
+        y: height / 2 - 10,
+        fontSize: "2em",
+        fontWeight: "bold",
+        fill: textColor,
+        text: leaderboardPosition,
+      })}
+
+      ${label({
+        x: width / 6 - padding / 2,
+        y: height / 2 - 10 + 30,
+        fontSize: ".8em",
+        fill: textColor,
+        text: "Leaderboard\nposition",
+      })}
+
+
+      ${label({
+        x: (width / 6) * 5 + padding / 2,
+        y: height / 2 - 10,
+        fontSize: "2em",
+        fontWeight: "bold",
+        fill: textColor,
+        text: totalCompletedKata,
+      })}
+
+      ${label({
+        x: (width / 6) * 5 + padding / 2,
+        y: height / 2 - 10 + 30,
+        fontSize: ".8em",
+        fill: textColor,
+        text: "Total Completed\nkatas",
+      })}
       `,
     })
   );
