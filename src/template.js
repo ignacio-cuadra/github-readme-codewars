@@ -3,13 +3,20 @@ import hexagon from "./components/hexagon.js";
 import label from "./components/label.js";
 import katanas from "./components/katanas.js";
 
-export default function template({
-  rank,
-  honor,
-  leaderboardPosition,
-  honorPercentile,
-  totalCompletedKata,
-}) {
+export default function template({ data, style }) {
+  let {
+    rank,
+    honor,
+    leaderboardPosition,
+    honorPercentile,
+    totalCompletedKata,
+  } = data;
+  let { backgroundColor, borderColor, textColor, primaryColor } = style;
+  if (!backgroundColor) backgroundColor = "#fffefe";
+  if (!borderColor) borderColor = "rgba(0, 0, 0, 0.2)";
+  if (!textColor) textColor = "rgb(0,0,0)";
+  if (!primaryColor) primaryColor = "#1f87e7";
+
   const rankArray = rank.split(" ");
   const rankNumber = rankArray[0];
   const rankCategory = rankArray.length > 0 ? rankArray[1] : "kyu";
@@ -17,10 +24,6 @@ export default function template({
 
   const width = 500;
   const height = 200;
-  const backgroundColor = "#fffefe";
-  const borderColor = "rgba(0, 0, 0, 0.2)";
-  const textColor = "rgb(0,0,0)";
-  const primaryColor = "#1f87e7";
   const padding = 30;
   const hexagonSize = 100;
 
