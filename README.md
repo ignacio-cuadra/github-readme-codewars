@@ -17,13 +17,13 @@ Display your codewars stats on your profile README
 # 🔧 Options
 The username field is the only required option. All other fields are optional
 
-| Parameter       | Detail                                                                | Example            |
-| --------------- | --------------------------------------------------------------------- | ------------------ |
-| username        | codewars username to show stats for                                   | ignacio-cuadra     |
-| backgroundColor | Background color in rgb or rgba color (default value: #fffefe)        | rgb(255,255,255)   |
-| borderColor     | Border color in rgb or rgba color (default value: rgba(0, 0, 0, 0.2)) | rgba(0, 0, 0, 0.2) |
-| textColor       | Text Color in rgb or rgba color (default value: rgb(0,0,0))           | rgb(0,0,0)         |
-| primaryColor    | Color of symbol in rgb or rgba color (default value: #1f87e)          | rgb(0,0,0)         |
+| Parameter       | Detail                                                                   | Example        |
+| --------------- | ------------------------------------------------------------------------ | -------------- |
+| username        | codewars username to show stats for                                      | ignacio-cuadra |
+| backgroundColor | Background color in hex, rgb or rgba color (default value #fffefe)       | 255,255,255    |
+| borderColor     | Border color in hex, rgb or rgba color (default value (rgba): 0,0,0,0.2) | 0,0,0,0.2      |
+| textColor       | Text Color in hex, rgb or rgba color (default value (rgb): 0,0,0)        | 000            |
+| primaryColor    | Color of symbol in hex, rgb or rgba color (default value: #1f87e)        | 1f87e          |
 
 # 😎 Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request if you have a way to improve this project.
