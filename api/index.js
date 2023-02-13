@@ -14,10 +14,11 @@ export default async function handler(req, res) {
     return;
   }
 
-  const backgroundColor = req?.query?.backgroundColor;
-  const borderColor = req?.query?.borderColor;
-  const textColor = req?.query?.textColor;
-  const primaryColor = req?.query?.primaryColor;
+  const style = {};
+  style.backgroundColor = parseColor(req?.query?.backgroundColor);
+  style.borderColor = parseColor(req?.query?.borderColor);
+  style.textColor = parseColor(req?.query?.textColor);
+  style.primaryColor = parseColor(req?.query?.primaryColor);
 
   try {
     const data = await fetcher({ username });
@@ -26,12 +27,7 @@ export default async function handler(req, res) {
     res.send(
       codewarsTemplate({
         data,
-        style: {
-          backgroundColor,
-          borderColor,
-          textColor,
-          primaryColor,
-        },
+        style,
       })
     );
   } catch (error) {
@@ -43,4 +39,24 @@ export default async function handler(req, res) {
     }
     res.status(500).json({ message: error.message });
   }
+}
+
+function parseColor(value) {
+  if (isHexadecimal(value)) return `#${value}`;
+  else if (isRGB(value)) return `rgb(${value})`;
+  else if (isRGBA(value)) return `rgba(${value})`;
+  return undefined;
+}
+
+function isHexadecimal(value) {
+  return /^([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$/.test(value);
+}
+function isRGB(value) {
+  if (!/^([0-9]{1,3},[0-9]{1,3},[0-9]{1,3})$/.test(value)) return false;
+  return true;
+}
+function isRGBA(value) {
+  if (!/^([0-9]{1,3},[0-9]{1,3},[0-9]{1,3},([01]|0*\.[0-9]+))$/.test(value))
+    return false;
+  return true;
 }
