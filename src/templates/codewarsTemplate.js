@@ -1,13 +1,21 @@
-import card from "../src/components/card.js";
-import hexagon from "../src/components/hexagon.js";
-import katanas from "../src/components/katanas.js";
-import label from "../src/components/label.js";
-export default async function handler(req, res) {
-  const rank = "3 kyu";
-  const honor = "1,250";
-  let leaderboardPosition = "#16,637";
-  const honorPercentile = "Top 3.276%";
-  const totalCompletedKata = "85";
+import card from "../components/card.js";
+import hexagon from "../components/hexagon.js";
+import label from "../components/label.js";
+import katanas from "../components/katanas.js";
+
+export default function codewarsTemplate({ data, style }) {
+  let {
+    rank,
+    honor,
+    leaderboardPosition,
+    honorPercentile,
+    totalCompletedKata,
+  } = data;
+  let { backgroundColor, borderColor, textColor, primaryColor } = style;
+  if (!backgroundColor) backgroundColor = "#fffefe";
+  if (!borderColor) borderColor = "rgba(0, 0, 0, 0.2)";
+  if (!textColor) textColor = "rgb(0,0,0)";
+  if (!primaryColor) primaryColor = "#1f87e7";
 
   const rankArray = rank.split(" ");
   const rankNumber = rankArray[0];
@@ -16,33 +24,29 @@ export default async function handler(req, res) {
 
   const width = 500;
   const height = 200;
-  const backgroundColor = "#fffefe";
-  const borderColor = "rgba(0, 0, 0, 0.5)";
-  const textColor = "rgb(0,0,0)";
-  const primaryColor = "#1f87e7";
   const padding = 30;
   const hexagonSize = 100;
-  res.send(
-    card({
-      title: "Codewars Stats Ignacio Cuadra",
-      description: "Codewars Stats Ignacio Cuadra",
-      width: width,
-      height: height,
-      borderRadius: 10,
-      backgroundColor,
-      borderColor,
-      children: `
+
+  return card({
+    title: "Codewars Stats",
+    description: "Codewars Stats",
+    width: width,
+    height: height,
+    borderRadius: 10,
+    backgroundColor,
+    borderColor,
+    children: `
         <line x1 = "${
           (width - 2 * padding) / 3 + padding - padding
         }" y1 = "${padding}" x2 = "${
-        (width - 2 * padding) / 3 + padding - padding
-      }" y2="${height - padding}" stroke="${borderColor}" stroke-width="0.5"/>
+      (width - 2 * padding) / 3 + padding - padding
+    }" y2="${height - padding}" stroke="${borderColor}" stroke-width="0.5"/>
 
       <line x1 = "${
         ((width - 2 * padding) / 3) * 2 + padding + padding
       }" y1 = "${padding}" x2 = "${
-        ((width - 2 * padding) / 3) * 2 + padding + padding
-      }" y2="${height - padding}" stroke="${borderColor}" stroke-width="0.5"/>
+      ((width - 2 * padding) / 3) * 2 + padding + padding
+    }" y2="${height - padding}" stroke="${borderColor}" stroke-width="0.5"/>
 
       ${hexagon({
         x: width / 2 - hexagonSize / 2,
@@ -89,7 +93,7 @@ export default async function handler(req, res) {
         fontSize: "1em",
         fontWeight: "bold",
         fill: primaryColor,
-        text: "Codewar's Rank",
+        text: "Codewars Rank",
       })}
 
       ${label({
@@ -137,6 +141,5 @@ export default async function handler(req, res) {
         text: "Total Completed\nkatas",
       })}
       `,
-    })
-  );
+  });
 }

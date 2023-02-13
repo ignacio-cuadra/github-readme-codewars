@@ -1,7 +1,12 @@
+import UserNotFoundError from "./UserNotFoundError.js";
+
 const fetcher = ({ username }) => {
   if (!username) throw new Error("username is required");
   return fetch(`https://www.codewars.com/users/${username}`)
-    .then((response) => response.text())
+    .then((response) => {
+      if (response.status === 404) throw new UserNotFoundError();
+      return response.text();
+    })
     .then((html) => {
       // const name = getDataFormLabel(html, "Name");
       const rank = getDataFormLabel(html, "Rank") || "8 Kyu";
