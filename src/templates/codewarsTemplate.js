@@ -56,11 +56,8 @@ export default function codewarsTemplate({ data, style }) {
         fill: "transparent",
         strokeColor: primaryColor,
         strokeWidth: 4,
+        topSizeToCut: 12,
       })}
-
-      <rect x = "${
-        width / 2 - 20
-      }" y = "${padding}" width = "40" height = "40" fill = "${backgroundColor}"/>
 
       ${katanas({
         x: width / 2 - 15,

@@ -6,6 +6,7 @@ export default function hexagon({
   fill = "red",
   strokeColor = "transparent",
   strokeWidth = 0,
+  topSizeToCut = 0,
 }) {
   const hexagonVerticalPadding = 0;
   const hexagonHorizontalPadding = 5;
@@ -15,12 +16,14 @@ export default function hexagon({
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     x="${x}"
-    y="${y}"
+    y="${y + topSizeToCut}"
     width="${width}"
     height="${height}"
-    viewBox="${strokeWidth / -2} ${strokeWidth / -2 - strokeWidth * 0.1} ${
-    hexagonWidth + strokeWidth
-  } ${hexagonHeight + strokeWidth + strokeWidth * 0.2}">
+    viewBox="${strokeWidth / -2} ${
+    strokeWidth / -2 - strokeWidth * 0.1 + topSizeToCut
+  } ${hexagonWidth + strokeWidth} ${
+    hexagonHeight + strokeWidth + strokeWidth * 0.2
+  }">
   <polygon points="${hexagonWidth / 2},${hexagonVerticalPadding} ${
     hexagonWidth - hexagonHorizontalPadding
   },${hexagonHeight * 0.25} ${hexagonWidth - hexagonHorizontalPadding},${
