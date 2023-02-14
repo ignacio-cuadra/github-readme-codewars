@@ -2,6 +2,7 @@ import card from "../components/card.js";
 import hexagon from "../components/hexagon.js";
 import label from "../components/label.js";
 import katanas from "../components/katanas.js";
+import themes from "../themes.js";
 
 export default function codewarsTemplate({ data, style }) {
   let {
@@ -11,11 +12,9 @@ export default function codewarsTemplate({ data, style }) {
     honorPercentile,
     totalCompletedKata,
   } = data;
-  let { backgroundColor, borderColor, textColor, primaryColor } = style;
-  if (!backgroundColor) backgroundColor = "#fffefe";
-  if (!borderColor) borderColor = "rgba(0, 0, 0, 0.2)";
-  if (!textColor) textColor = "rgb(0,0,0)";
-  if (!primaryColor) primaryColor = "#1f87e7";
+
+  const { backgroundColor, borderColor, textColor, primaryColor } =
+    applyStyle(style);
 
   const rankArray = rank.split(" ");
   const rankNumber = rankArray[0];
@@ -140,3 +139,19 @@ export default function codewarsTemplate({ data, style }) {
       `,
   });
 }
+
+const applyStyle = ({
+  theme: themeKey,
+  backgroundColor,
+  borderColor,
+  textColor,
+  primaryColor,
+}) => {
+  const theme =
+    themeKey && themeKey in themes ? themes[themeKey] : themes.default;
+  if (!backgroundColor) backgroundColor = theme.backgroundColor;
+  if (!borderColor) borderColor = theme.borderColor;
+  if (!textColor) textColor = theme.textColor;
+  if (!primaryColor) primaryColor = theme.primaryColor;
+  return { backgroundColor, borderColor, textColor, primaryColor };
+};

@@ -13,8 +13,8 @@ export default async function handler(req, res) {
     res.send(usernameIsRequeredTemplate());
     return;
   }
-
   const style = {};
+  style.theme = req?.query?.theme;
   style.backgroundColor = parseColor(req?.query?.backgroundColor);
   style.borderColor = parseColor(req?.query?.borderColor);
   style.textColor = parseColor(req?.query?.textColor);
