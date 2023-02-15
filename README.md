@@ -42,4 +42,4 @@ To enable a theme, append `&theme=` followed by the theme name to the end of the
 # 😎 Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request if you have a way to improve this project.
 ## Inspiration
-This remos was inspired on <a href = "https://github.com/DenverCoder1/github-readme-streak-stats">Github Readme Streak Stats</a> 💗
+This repo was inspired on <a href = "https://github.com/DenverCoder1/github-readme-streak-stats">Github Readme Streak Stats</a> 💗
