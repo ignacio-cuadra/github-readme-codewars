@@ -5,6 +5,7 @@ const card = ({
   height = 500,
   borderRadius = 0.5,
   backgroundColor = "rgb(255, 255, 255)",
+  borderWidth = 1,
   borderColor = "rgb(0, 0, 0)",
   children = null,
 } = {}) => {
@@ -30,6 +31,7 @@ const card = ({
       width="${width}"
       fill="${backgroundColor}"
       stroke="${borderColor}"
+      stroke-width="${borderWidth}"
       stroke-opacity="1"
     />
     </g>

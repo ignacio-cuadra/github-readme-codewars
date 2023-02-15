@@ -31,6 +31,7 @@ export default function codewarsTemplate({ data, style }) {
     description: "Codewars Stats",
     width: width,
     height: height,
+    borderWidth: 2,
     borderRadius: 10,
     backgroundColor,
     borderColor,
@@ -39,13 +40,13 @@ export default function codewarsTemplate({ data, style }) {
           (width - 2 * padding) / 3 + padding - padding
         }" y1 = "${padding}" x2 = "${
       (width - 2 * padding) / 3 + padding - padding
-    }" y2="${height - padding}" stroke="${borderColor}" stroke-width="0.5"/>
+    }" y2="${height - padding}" stroke="${borderColor}" stroke-width="2"/>
 
       <line x1 = "${
         ((width - 2 * padding) / 3) * 2 + padding + padding
       }" y1 = "${padding}" x2 = "${
       ((width - 2 * padding) / 3) * 2 + padding + padding
-    }" y2="${height - padding}" stroke="${borderColor}" stroke-width="0.5"/>
+    }" y2="${height - padding}" stroke="${borderColor}" stroke-width="2"/>
 
       ${hexagon({
         x: width / 2 - hexagonSize / 2,
