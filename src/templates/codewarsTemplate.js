@@ -74,6 +74,7 @@ export default function codewarsTemplate({ data, style }) {
         fontWeight: "bold",
         fill: textColor,
         text: rankNumber,
+        style: "animation: currstreak 0.6s linear forwards",
       })}
 
       ${label({
@@ -82,6 +83,7 @@ export default function codewarsTemplate({ data, style }) {
         fontSize: "1em",
         fill: textColor,
         text: rankCategory,
+        style: "animation: fadein 0.6s linear forwards",
       })}
 
       ${label({
@@ -99,6 +101,7 @@ export default function codewarsTemplate({ data, style }) {
         fontSize: ".8em",
         fill: textColor,
         text: honor,
+        style: "animation: fadein 0.6s linear forwards",
       })}
 
 
@@ -110,6 +113,7 @@ export default function codewarsTemplate({ data, style }) {
         fontWeight: "bold",
         fill: textColor,
         text: leaderboardPosition,
+        style: "animation: fadein 0.6s linear forwards",
       })}
 
       ${label({
@@ -128,6 +132,7 @@ export default function codewarsTemplate({ data, style }) {
         fontWeight: "bold",
         fill: textColor,
         text: totalCompletedKata,
+        style: "animation: fadein 0.6s linear forwards",
       })}
 
       ${label({

@@ -5,6 +5,7 @@ export default function label({
   fill = "rgb(0, 0, 0)",
   text = "",
   fontWeight = 500,
+  style = "",
 }) {
   return text
     .split("\n")
@@ -12,7 +13,7 @@ export default function label({
       (line, index) =>
         `<text x = "${x}" y = "${
           y + index * 20
-        }" font-size = "${fontSize}" fill="${fill}" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-weight="${fontWeight}">${line}</text>`
+        }" font-size = "${fontSize}" fill="${fill}" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-weight="${fontWeight}" style = "${style}">${line}</text>`
     )
     .join("");
 }
