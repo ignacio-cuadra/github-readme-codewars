@@ -33,11 +33,13 @@ To enable a theme, append `&theme=` followed by the theme name to the end of the
 [![Github Readme Codewars](https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=dark)](https://github.com/ignacio-cuadra/github-readme-codewars)
 ```
 
-| Theme     | Preview                                                                                                                                    |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `default` | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=default" alt = "ignacio-cuadra"/> |
-| `light`   | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=light" alt = "ignacio-cuadra"/>   |
-| `dark`    | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=dark" alt = "ignacio-cuadra"/>    |
+| Theme       | Preview                                                                                                                                      |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `default`   | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=default" alt = "ignacio-cuadra"/>   |
+| `light`     | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=light" alt = "ignacio-cuadra"/>     |
+| `dark`      | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=dark" alt = "ignacio-cuadra"/>      |
+| `halloween` | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=halloween" alt = "ignacio-cuadra"/> |
+| `hacker`    | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=hacker" alt = "ignacio-cuadra"/>    |
 
 # 😎 Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request if you have a way to improve this project.

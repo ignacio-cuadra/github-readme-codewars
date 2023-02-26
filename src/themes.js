@@ -17,5 +17,17 @@ const themes = {
     textColor: "#ffffff",
     primaryColor: "#1f87e7",
   },
+  halloween: {
+    backgroundColor: "#1C1A2B",
+    borderColor: "#FFC400",
+    textColor: "#FFC400",
+    primaryColor: "#FDEF49",
+  },
+  hacker: {
+    backgroundColor: "#000000",
+    borderColor: "#20C20E",
+    textColor: "#20C20E",
+    primaryColor: "#20C20E",
+  },
 };
 export default themes;
