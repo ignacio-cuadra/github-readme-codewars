@@ -29,5 +29,11 @@ const themes = {
     textColor: "#20C20E",
     primaryColor: "#20C20E",
   },
+  dracula: {
+    borderColor: "#BA5F17",
+    primaryColor: "#84628F",
+    textColor: "#BEBEBE",
+    backgroundColor: "#242424",
+  },
 };
 export default themes;

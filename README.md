@@ -40,6 +40,7 @@ To enable a theme, append `&theme=` followed by the theme name to the end of the
 | `dark`      | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=dark" alt = "ignacio-cuadra"/>      |
 | `halloween` | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=halloween" alt = "ignacio-cuadra"/> |
 | `hacker`    | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=hacker" alt = "ignacio-cuadra"/>    |
+| `dracula`   | <img align="center" src="https://codewars-stats-ignacio-cuadra.vercel.app/?username=ignacio-cuadra&theme=dracula" alt = "ignacio-cuadra"/>   |
 
 # 😎 Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request if you have a way to improve this project.
