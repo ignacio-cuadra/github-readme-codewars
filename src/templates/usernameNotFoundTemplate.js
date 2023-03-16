@@ -1,4 +1,4 @@
-import card from "../components/card.js";
+import card from "../components/card-old.js";
 import label from "../components/label.js";
 import face from "../components/face.js";
 import sadFace from "../components/sadFace.js";

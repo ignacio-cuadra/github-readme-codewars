@@ -1,4 +1,4 @@
-import card from "../components/card.js";
+import card from "../components/card-old.js";
 import hexagon from "../components/hexagon.js";
 import label from "../components/label.js";
 import katanas from "../components/katanas.js";
