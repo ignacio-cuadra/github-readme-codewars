@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ignacio-cuadra/codewars-stats/issues"
   },
-  "homepage": "https://github.com/ignacio-cuadra/codewars-stats#readme"
+  "homepage": "https://github.com/ignacio-cuadra/codewars-stats#readme",
+  "dependencies": {
+    "vercel": "^28.18.0"
+  }
 }
