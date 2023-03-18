@@ -1,4 +1,4 @@
-import svg from "../../^/git-graph/ts-nul-authority/file";
+import svg from "../components/svg.js";
 
 const baseTemplate = ({
   title = "",

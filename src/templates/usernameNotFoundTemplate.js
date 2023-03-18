@@ -1,7 +1,7 @@
-import card from "../components/card.js";
 import label from "../components/label.js";
 import face from "../components/face.js";
 import sadFace from "../components/sadFace.js";
+import baseTemplate from "./baseTemplate.js";
 
 export default function usernameNotFoundTemplate() {
   const backgroundColor = "#fffefe";
@@ -13,7 +13,7 @@ export default function usernameNotFoundTemplate() {
   const height = 200;
   const iconSize = 100;
 
-  return card({
+  return baseTemplate({
     title: "Codewars Stats",
     description: "Codewars Stats",
     width: width,
