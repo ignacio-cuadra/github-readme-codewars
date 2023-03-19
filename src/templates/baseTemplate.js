@@ -1,4 +1,5 @@
 import svg from "../components/svg.js";
+import card from "../components/card.js";
 
 const baseTemplate = ({
   title = "",

@@ -1,6 +1,6 @@
-import card from "../components/card-old.js";
 import label from "../components/label.js";
 import face from "../components/face.js";
+import baseTemplate from "./baseTemplate.js";
 
 export default function usernameIsRequeredTemplate() {
   const backgroundColor = "#fffefe";
@@ -12,7 +12,7 @@ export default function usernameIsRequeredTemplate() {
   const height = 200;
   const iconSize = 100;
 
-  return card({
+  return baseTemplate({
     title: "Codewars Stats",
     description: "Codewars Stats",
     width: width,
