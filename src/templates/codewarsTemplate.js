@@ -1,4 +1,4 @@
-import card from "../components/card-old.js";
+import baseTemplate from "./baseTemplate.js";
 import hexagon from "../components/hexagon.js";
 import label from "../components/label.js";
 import katanas from "../components/katanas.js";
@@ -26,7 +26,7 @@ export default function codewarsTemplate({ data, style }) {
   const padding = 30;
   const hexagonSize = 100;
 
-  return card({
+  return baseTemplate({
     title: "Codewars Stats",
     description: "Codewars Stats",
     width: width,
