@@ -6,13 +6,13 @@ import themes from "../themes.js";
 
 export default function codewarsTemplate({ data, style }) {
   let {
+    username,
     rank,
     honor,
     leaderboardPosition,
     honorPercentile,
     totalCompletedKata,
   } = data;
-
   const { backgroundColor, borderColor, textColor, primaryColor } =
     applyStyle(style);
 
@@ -27,8 +27,8 @@ export default function codewarsTemplate({ data, style }) {
   const hexagonSize = 100;
 
   return baseTemplate({
-    title: "Codewars Stats",
-    description: "Codewars Stats",
+    title: `Codewars Stats ${username}`,
+    description: `Stats of ${username} rank: ${rank}, honor: ${honor}, leaderboard position: ${leaderboardPosition}, honor percentile:, ${honorPercentile}, total completed kata: ${totalCompletedKata}`,
     width: width,
     height: height,
     borderWidth: 2,
