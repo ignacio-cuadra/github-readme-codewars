@@ -22,6 +22,7 @@ export default async function handler(req, res) {
 
   try {
     const data = await fetcher({ username });
+    data.username = username;
     res.status(200);
     res.setHeader("Content-Type", "image/svg+xml; charset=utf-8");
     res.send(
