@@ -35,6 +35,17 @@ export default function codewarsTemplate({ data, style }) {
     borderRadius: 10,
     backgroundColor,
     borderColor,
+    style: `
+      @keyframes currstreak {
+        0% { font-size: 3px; opacity: 0.2; }
+        80% { font-size: 34px; opacity: 1; }
+        100% { font-size: 28px; opacity: 1; }
+      }
+      @keyframes fadein {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+    `,
     children: `
         <line x1 = "${
           (width - 2 * padding) / 3 + padding - padding
