@@ -20,13 +20,18 @@ export default function usernameIsRequeredTemplate() {
     borderRadius: 10,
     backgroundColor,
     borderColor,
+    style: `
+      .primaryColor {
+        stroke: ${primaryColor};
+      }
+    `,
     children: `
       ${face({
         x: width / 2 - iconSize / 2,
         y: height / 2 - iconSize / 2 - 10,
         width: iconSize,
         height: iconSize,
-        color: primaryColor,
+        className: "primaryColor",
       })}
       ${label({
         x: width / 2,
